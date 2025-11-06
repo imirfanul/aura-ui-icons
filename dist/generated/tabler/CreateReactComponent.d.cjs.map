@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/generated/tabler/CreateReactComponent.d.ts"],"names":[],"mappings":";;;AAGA,IAAO,8BAAA,GAAQ","file":"CreateReactComponent.d.cjs","sourcesContent":["// AUTO-GENERATED. DO NOT EDIT.\nimport type { IconType } from '../../types';\ndeclare const _default: IconType;\nexport default _default;\n"]}

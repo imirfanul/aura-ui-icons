@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/generated/lucide/CreateLucideIcon.d.ts"],"names":[],"mappings":";;;AAGA,IAAO,0BAAA,GAAQ","file":"CreateLucideIcon.d.cjs","sourcesContent":["// AUTO-GENERATED. DO NOT EDIT.\nimport type { IconType } from '../../types';\ndeclare const _default: IconType;\nexport default _default;\n"]}

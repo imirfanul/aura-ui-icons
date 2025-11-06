@@ -1,0 +1,117 @@
+{
+	"name": "aura-ui-icons",
+	"version": "0.1.1",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Unified React icon library combining Lucide, Phosphor, Heroicons, Radix, and Tabler icons with clean suffix-free components, full TypeScript support, and tree-shakable imports.",
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./lucide": {
+			"types": "./dist/generated/lucide/index.d.ts",
+			"import": "./dist/generated/lucide/index.js",
+			"require": "./dist/generated/lucide/index.cjs"
+		},
+		"./phosphor": {
+			"types": "./dist/generated/phosphor/index.d.ts",
+			"import": "./dist/generated/phosphor/index.js",
+			"require": "./dist/generated/phosphor/index.cjs"
+		},
+		"./radix": {
+			"types": "./dist/generated/radix/index.d.ts",
+			"import": "./dist/generated/radix/index.js",
+			"require": "./dist/generated/radix/index.cjs"
+		},
+		"./tabler": {
+			"types": "./dist/generated/tabler/index.d.ts",
+			"import": "./dist/generated/tabler/index.js",
+			"require": "./dist/generated/tabler/index.cjs"
+		},
+		"./heroicons/outline": {
+			"types": "./dist/generated/heroicons/outline/index.d.ts",
+			"import": "./dist/generated/heroicons/outline/index.js",
+			"require": "./dist/generated/heroicons/outline/index.cjs"
+		},
+		"./heroicons/solid": {
+			"types": "./dist/generated/heroicons/solid/index.d.ts",
+			"import": "./dist/generated/heroicons/solid/index.js",
+			"require": "./dist/generated/heroicons/solid/index.cjs"
+		},
+		"./lucide/*": {
+			"types": "./dist/generated/lucide/*.d.ts",
+			"import": "./dist/generated/lucide/*.js",
+			"require": "./dist/generated/lucide/*.cjs"
+		},
+		"./phosphor/*": {
+			"types": "./dist/generated/phosphor/*.d.ts",
+			"import": "./dist/generated/phosphor/*.js",
+			"require": "./dist/generated/phosphor/*.cjs"
+		},
+		"./radix/*": {
+			"types": "./dist/generated/radix/*.d.ts",
+			"import": "./dist/generated/radix/*.js",
+			"require": "./dist/generated/radix/*.cjs"
+		},
+		"./tabler/*": {
+			"types": "./dist/generated/tabler/*.d.ts",
+			"import": "./dist/generated/tabler/*.js",
+			"require": "./dist/generated/tabler/*.cjs"
+		},
+		"./heroicons/outline/*": {
+			"types": "./dist/generated/heroicons/outline/*.d.ts",
+			"import": "./dist/generated/heroicons/outline/*.js",
+			"require": "./dist/generated/heroicons/outline/*.cjs"
+		},
+		"./heroicons/solid/*": {
+			"types": "./dist/generated/heroicons/solid/*.d.ts",
+			"import": "./dist/generated/heroicons/solid/*.js",
+			"require": "./dist/generated/heroicons/solid/*.cjs"
+		}
+	},
+	"peerDependencies": {
+		"@heroicons/react": ">=2",
+		"@phosphor-icons/react": ">=2",
+		"@radix-ui/react-icons": ">=1",
+		"@tabler/icons-react": ">=2",
+		"lucide-react": ">=0.441.0",
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"peerDependenciesMeta": {
+		"lucide-react": {
+			"optional": true
+		},
+		"@phosphor-icons/react": {
+			"optional": true
+		},
+		"@radix-ui/react-icons": {
+			"optional": true
+		},
+		"@heroicons/react": {
+			"optional": true
+		},
+		"@tabler/icons-react": {
+			"optional": true
+		}
+	},
+	"scripts": {
+		"codegen": "tsx scripts/codegen.ts",
+		"build": "pnpm run codegen && tsup --config tsup.config.ts",
+		"check": "tsc --noEmit",
+		"prepublishOnly": "pnpm run build"
+	},
+	"devDependencies": {
+		"@types/node": "^24.10.0",
+		"@types/react": "^19.2.2",
+		"@types/react-dom": "^19.2.2",
+		"tsup": "^8.5.0",
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3"
+	}
+}

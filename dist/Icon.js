@@ -1,0 +1,31 @@
+import * as React from 'react';
+import { jsx, Fragment } from 'react/jsx-runtime';
+
+// src/Icon.tsx
+function Icon({
+  set,
+  name,
+  size = 24,
+  fallback = null,
+  ...rest
+}) {
+  const [Comp, setComp] = React.useState(null);
+  React.useEffect(() => {
+    let mounted = true;
+    const path = set.startsWith("heroicons/") ? `./generated/heroicons/${set.split("/")[1]}/index.js` : `./generated/${set}/index.js`;
+    import(path).then((mod) => {
+      const C = mod[name];
+      if (C && mounted) setComp(() => C);
+    }).catch(() => mounted && setComp(null));
+    return () => {
+      mounted = false;
+    };
+  }, [set, name]);
+  if (!Comp) return /* @__PURE__ */ jsx(Fragment, { children: fallback });
+  return /* @__PURE__ */ jsx(Comp, { width: size, height: size, "aria-hidden": true, ...rest });
+}
+var Icon_default = Icon;
+
+export { Icon, Icon_default as default };
+//# sourceMappingURL=Icon.js.map
+//# sourceMappingURL=Icon.js.map
